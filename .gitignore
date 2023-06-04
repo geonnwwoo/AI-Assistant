@@ -38,6 +38,4 @@ typings/
 out/
 dist/
 
-# Backgrounds
-src/assets/communication/
-src/assets/hidden/
+src/assets
