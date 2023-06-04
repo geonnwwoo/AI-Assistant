@@ -28,7 +28,7 @@ def ask(question):
     print(chat_response)
     messages.append({"role": "assistant", "content": chat_response})
 
-    with open('./assets/messages', "w") as file:
+    with open('./assets/messages.txt', "w") as file:
         file.write(str(messages))
 
 
