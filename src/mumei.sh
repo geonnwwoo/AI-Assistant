@@ -7,5 +7,6 @@ if [ "$1" = "start" ]; then
 else
     cd 
     cd Documents/Programming/Github/Assistant/src/
+    echo "$1" > ./assets/question.txt
     python3 question.py
 fi
