@@ -1,7 +1,6 @@
 #!/bin/bash
 
-if [$1 == 'start']
-then
+if [ "$1" = "start" ]; then
     cd 
     cd Documents/Programming/Github/Assistant/src/
     python3 session.py
