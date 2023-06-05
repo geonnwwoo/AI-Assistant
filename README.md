@@ -22,3 +22,19 @@ For example:
 ```
 ./ask.sh set-personality 'You are Abraham Lincoln'
 ```
+
+## Usage
+
+To ask a single question, use:
+```
+./ask [question]
+```
+For example:
+```
+./ask 'When was Thomas Jefferson born?'
+```
+
+To create a session where you can ask multiple questions, use:
+```
+./ask start
+```
