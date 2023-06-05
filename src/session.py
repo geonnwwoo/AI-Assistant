@@ -16,7 +16,13 @@ def check_file_empty(file_path):
         return "File not found"
     except IOError:
         return "Error reading the file"
-
+    
+def file_contains_text(file_path):
+    with open(file_path, 'r') as file:
+        for line in file:
+            if any(char.isprintable() for char in line):
+                return True
+    return False
 
 def ask(question):
     messages.append({"role": "user", "content": question})
@@ -35,9 +41,14 @@ def ask(question):
 messages = []
 
 if check_file_empty('./assets/messages.txt'):
-    f = open("./assets/PERSONALITY.txt", "r")
-    messages = [{"role": "system", "content": f.read()}]
-    f.close()
+    if file_contains_text('./assets/PERSONALITY.txt'):
+        f = open("./assets/PERSONALITY.txt", "r")
+        messages = [{"role": "system", "content": f.read()}]
+        f.close()
+    else:
+        f = open("./assets/messages.txt", "r")
+        messages = eval(f.read())
+        f.close()
 else:
     f = open("./assets/messages.txt", "r")
     messages = eval(f.read())
